@@ -175,7 +175,7 @@ PrintConsole topScreen, bottomScreen;
 	consoleInit(GFX_BOTTOM, &bottomScreen);
 
 
-	ret=http_download("http://animeflv.net/");
+	ret=http_download("http://www.animestreams.net/");
      int vval1= content.find("Latest episodes");
      int vval2 = content.find("Last anime",vval1);
 
@@ -195,7 +195,7 @@ if(val0 == -1){break;}
 
  val1 =  content.find("/ver/",val1);
  val2 = (content.find('"',val1));
- string gdrive = "http://animeflv.net"+ content.substr(val1,val2 - val1);
+ string gdrive = "http://www.animestreams.net"+ content.substr(val1,val2 - val1);
 
 
 arraychapter.push_back(gdrive);
