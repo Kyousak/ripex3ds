@@ -176,8 +176,8 @@ PrintConsole topScreen, bottomScreen;
 
 
 	ret=http_download("http://animeflv.net/");
-     int vval1= content.find("ltimos episodios");
-     int vval2 = content.find("ltimos animes",vval1);
+     int vval1= content.find("Latest episodes");
+     int vval2 = content.find("Last anime",vval1);
 
        content = content.substr(vval1,vval2 - vval1);
 
@@ -188,7 +188,7 @@ int arrayselect = 0;
 int arraycount = 0;
 vector<string> arraychapter;
 consoleSelect(&topScreen);
-cout << "Lista de Episodios de Hoy:" << endl;
+cout << "List of Episodes of Today:" << endl;
  while(val0 != -1){
 val0= content.find("/ver/",val1);
 if(val0 == -1){break;}
@@ -206,11 +206,11 @@ val1++;
 
 
  consoleSelect(&bottomScreen);
- cout << "\x1b[47;30mUse las flechas para elegir.\x1b[0m" << endl;
-       cout << "\x1b[47;30mPresiona A para lanzar el episodio.\x1b[0m" << endl;
+ cout << "\x1b[47;30mUse the arrows to choose.\x1b[0m" << endl;
+       cout << "\x1b[47;30mPress A to launch the episode.\x1b[0m" << endl;
    cout <<  arrayselect << "/" <<  arraychapter.size() - 1<< endl;
-        cout <<"Nombre: \n" << arraychapter[arrayselect].substr(arraychapter[arrayselect].rfind("/")+1) << endl;
-cout << "Enlace: \n" << arraychapter[arrayselect]  << endl;
+        cout <<"First Name: \n" << arraychapter[arrayselect].substr(arraychapter[arrayselect].rfind("/")+1) << endl;
+cout << "Link: \n" << arraychapter[arrayselect]  << endl;
 
 	// Try the following for redirection to the above URL.
 	// ret=http_download("http://tinyurl.com/hd8jwqx");
@@ -230,11 +230,11 @@ if ( kDown & KEY_RIGHT  ){
         if (arrayselect < arraychapter.size() - 1)
        { consoleClear();
          arrayselect++;
-         cout << "\x1b[47;30mUse las flechas para elegir.\x1b[0m" << endl;
-     cout << "\x1b[47;30mPresiona A para lanzar el episodio.\x1b[0m" << endl;
+         cout << "\x1b[47;30mUse the arrows to choose.\x1b[0m" << endl;
+     cout << "\x1b[47;30mPress A to launch the episode.\x1b[0m" << endl;
         cout <<  arrayselect << "/" <<  arraychapter.size() - 1<< endl;
-           cout <<"Nombre: \n" << arraychapter[arrayselect].substr(arraychapter[arrayselect].rfind("/")+1) << endl;
-cout << "Enlace: \n" << arraychapter[arrayselect]  << endl;
+           cout <<"First Name: \n" << arraychapter[arrayselect].substr(arraychapter[arrayselect].rfind("/")+1) << endl;
+cout << "Link: \n" << arraychapter[arrayselect]  << endl;
 
 
 
@@ -246,11 +246,11 @@ cout << "Enlace: \n" << arraychapter[arrayselect]  << endl;
         if (arrayselect > 0 )
        { consoleClear();
        arrayselect--;
-       cout << "\x1b[47;30mUse las flechas para elegir.\x1b[0m" << endl;
-       cout << "\x1b[47;30mPresiona A para lanzar el episodio.\x1b[0m" << endl;
+       cout << "\x1b[47;30mUse the arrows to choose.\x1b[0m" << endl;
+       cout << "\x1b[47;30mPress A to launch the episode.\x1b[0m" << endl;
              cout <<  arrayselect << "/" <<  arraychapter.size() - 1<< endl;
-                      cout <<"Nombre: \n" << arraychapter[arrayselect].substr(arraychapter[arrayselect].rfind("/")+1) << endl;
-cout << "Enlace: \n" << arraychapter[arrayselect]  << endl;
+                      cout <<"First Name: \n" << arraychapter[arrayselect].substr(arraychapter[arrayselect].rfind("/")+1) << endl;
+cout << "Link: \n" << arraychapter[arrayselect]  << endl;
 
 
 }
@@ -283,7 +283,7 @@ cout << gdrive << endl;
 	// ret=http_download("http://tinyurl.com/hd8jwqx");
 consoleSelect(&topScreen);
  consoleClear();
-	cout << "VIDEO EXTRAIDO: PRESIONA START PARA CONTINUAR." << endl;
+	cout << "VIDEO EXTRA: PRESS START TO CONTINUE." << endl;
 APT_PrepareToStartSystemApplet(APPID_WEB);
 APT_StartSystemApplet(APPID_WEB, gdrive.c_str(), 1024, 0);
 
